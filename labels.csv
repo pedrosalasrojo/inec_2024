@@ -1,0 +1,58 @@
+var,cat,class
+Sex,0,Female
+Sex,1,Male
+Birth_Area,1,North
+Birth_Area,2,Center
+Birth_Area,3,Litoral
+Birth_Area,4,South
+Father_Occ,0,Unemployed
+Father_Occ,1,Employer
+Father_Occ,2,Self-employed
+Father_Occ,3,Labourer
+Father_Occ,4,Employee
+Father_Occ,5,Domestic service
+Father_Occ,6,Other
+Mother_Occ,0,Unemployed
+Mother_Occ,1,Employer
+Mother_Occ,2,Self-employed
+Mother_Occ,3,Labourer
+Mother_Occ,4,Employee
+Mother_Occ,5,Domestic service
+Mother_Occ,6,Other
+Mother_Edu,0,Years of Education
+Mother_Edu,1,Years of Education
+Mother_Edu,2,Years of Education
+Mother_Edu,3,Years of Education
+Mother_Edu,4,Years of Education
+Mother_Edu,5,Years of Education
+Mother_Edu,6,Years of Education
+Mother_Edu,7,Years of Education
+Mother_Edu,8,Years of Education
+Mother_Edu,9,Years of Education
+Mother_Edu,10,Years of Education
+Mother_Edu,11,Years of Education
+Mother_Edu,12,Years of Education
+Mother_Edu,13,Years of Education
+Mother_Edu,14,Years of Education
+Mother_Edu,15,Years of Education
+Father_Edu,0,Years of Education
+Father_Edu,1,Years of Education
+Father_Edu,2,Years of Education
+Father_Edu,3,Years of Education
+Father_Edu,4,Years of Education
+Father_Edu,5,Years of Education
+Father_Edu,6,Years of Education
+Father_Edu,7,Years of Education
+Father_Edu,8,Years of Education
+Father_Edu,9,Years of Education
+Father_Edu,10,Years of Education
+Father_Edu,11,Years of Education
+Father_Edu,12,Years of Education
+Father_Edu,13,Years of Education
+Father_Edu,14,Years of Education
+Father_Edu,15,Years of Education
+Ethnicity,1,White
+Ethnicity,2,Mix-race
+Ethnicity,3,Indigenous
+Ethnicity,4,Afro-descendant
+Ethnicity,5,Other
