@@ -14,7 +14,7 @@ name <- "Pedro"
 path <- ifelse(name == "Pedro", "C:/Users/SALASROJ/Desktop/ECUADOR/",
                "Your_path/")
 
-# Basic setup (do not change)
+# Basic setup (same as in 1_exante_iop_withtuning.R)
 source(paste0(path,"/scripts/0_functions_exante.R"))
 data <- read.csv(paste0(path, "data/ecu_14.csv"), row.names = 1)  
 circum <- c("Mother_Occ", "Mother_Edu", "Father_Edu", "Father_Occ")

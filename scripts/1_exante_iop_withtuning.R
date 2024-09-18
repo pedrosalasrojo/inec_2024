@@ -9,9 +9,9 @@ library(haven)
 library(dineq)
 
 # Paste your path and plug your name
-name <- "Pedro"
-path <- ifelse(name == "Pedro", "C:/Users/SALASROJ/Desktop/ECUADOR/",
-               "Your_path/")
+name <- "Pedro"     # Write your name here
+path <- ifelse(name == "Pedro", "C:/Users/user/Downloads/INEC/",
+               "Your_path/")        # Paste your path here
 
 # Get ex ante functions, necessary to estimate exante IOp
 source(paste0(path,"/scripts/0_functions_exante.R"))
@@ -20,7 +20,7 @@ source(paste0(path,"/scripts/0_functions_exante.R"))
 data <- read.csv(paste0(path, "data/ecu_14.csv"), row.names = 1)  
 
 ###### Exercise 0: EXPLORE YOUR DATA ######
-gini.wtd(data$income, data$weights)
+gini.wtd(data$income)
 summary(data$income) # Outcome is in PPP USD 2017
 
 # Arrange Circumstances. Store names
@@ -31,9 +31,9 @@ circum <- c("Mother_Occ", "Mother_Edu", "Father_Edu", "Father_Occ")
 #            "Mother_Edu", "Father_Edu", "Birth_Area")
 
 # Store circumstances as "factors", so they are treated as unordered categories
-class(data$Ethnicity)
+class(data$Mother_Occ)
 data[circum] <- lapply(data[circum], as.factor)
-class(data$Ethnicity)
+class(data$Mother_Occ)
 
 # Write the model including all circumstances of interest
 model <- income ~ Mother_Occ + Father_Edu + Father_Occ + Mother_Edu
@@ -56,6 +56,7 @@ cv5 <- trainControl(method = "cv", number = 5, verboseIter = FALSE)
 # Note: See package "caret" for details
 
 grid_tr <- expand.grid(mincriterion = seq(0.6, 0.99, 0.005))
+plot(grid_tr, xlab = "Possible mincriterion (1-alpha) values")
 
 # Tune the algorithm with the cross validation and grid defined above
 
@@ -89,8 +90,8 @@ View(tune_results)
 
 tree <- get_tree(data = data,             # Your data
                  model = model,           # Your model
-                 mincri = tune_mincrit,   # Tuned mincriterion        
-                 minbu = 500,             # Tuned minbucket (minimum obs in terminal nodes)
+                 mincri = tune_mincrit,   # Tuned mincriterion (1 - critical alpha)    
+                 minbu = 100,             # Tuned minbucket (minimum obs in terminal nodes)
                  maxd = Inf)              # Depth of the tree
 
 print(tree)
@@ -226,12 +227,12 @@ results
 
 # Variable importance in the Random Forest ----
 importance <- varimp(forest)
-print(importance)
+print(importance) # Should not interpret this, it has no meaning
 importance <- importance*100/max(importance)
-print(importance)
+print(importance) 
 
 # Sometimes one gets "negative" importance. In practice, it means that the contribution
-# of that variable to the prediction problem is virtually zero.
+# of that variable to the prediction problem is zero.
 
 # Variable importance in IOp (Shapley)----
 
