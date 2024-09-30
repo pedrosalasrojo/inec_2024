@@ -181,7 +181,7 @@ shapley <- function(data, model, vars, ntree = 1,
   mod_1 <- model
   mod_2 <- update(mod_1, . ~ 1)
   type = "ctree"
-  wts = NA,
+  wts = NA
   
   if (is.na(wts)) {
     data$weights <- 1
